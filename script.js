@@ -2,13 +2,9 @@ const body = document.body;
 const level = document.querySelectorAll('.menu-item');
 
 
-const chosenLevel = (elem) => {
+const selectedLevel = (item) => {
     level.forEach((item) => item.classList.remove("selected"));
-    elem.target.classList.add("selected");
+    item.target.classList.add("selected");
 };
 
-level.forEach((item) => item.addEventListener("click", chosenLevel));
- 
-
-
- 
+level.forEach((item) => item.addEventListener("click", selectedLevel));

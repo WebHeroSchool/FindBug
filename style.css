@@ -65,7 +65,7 @@ body {
 .selected::before {
   position: absolute;
   content: '';
-  background: url(../img/rectangle.svg) no-repeat;
+  background: url('./img/rectangle.svg') no-repeat;
   background-size: cover;
   border: none;
   width: 22px;
