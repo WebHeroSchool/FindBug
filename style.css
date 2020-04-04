@@ -1,11 +1,10 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-image: url('./img/background.jpg');
-  color: #fff;
+  color: white;
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
-  margin: 0;
 }
 
 .container {
@@ -37,6 +36,17 @@ body {
   height: 70vh;
 }
 
+.main {
+ display: flex;
+ flex-direction: column;
+ flex: 1;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 90px;
+  }
 .main {
   display: flex;
   flex-direction: column;
@@ -91,6 +101,18 @@ body {
   line-height: 37px;
   font-family: 'Roboto', sans-serif;
   color: white;
+}
+
+.image {
+    
+}
+
+.image-block {
+    margin-top: 224px;
+    
+}
+
+@media (max-height: 982px){
   cursor: pointer;
   transition: .3s ease;
 }
@@ -183,31 +205,30 @@ body {
   }
 }
 
-@media (max-width: 575px) {
-  body {
-    background-size: auto;
-  }
+  @media (max-width: 575px) {
+    body {
+      background-size: auto;
+    }
 
-  .header {
-    width: 100vw;
-  }
+    .header {
+      width: 100vw;
+    }
 
-  .header-main {
-    font-size: 26px;
-    line-height: 30px;
-  }
+    .header-main {
+      font-size: 26px;
+      line-height: 30px;
+    }
 
-  .image-block {
-    display: none;
-  }
+    .image-block {
+      display: none;
+    }
+    .menu-item {
+      margin: 0 auto;
+    }
 
-  .menu-item {
-    margin: 0 auto;
+    .start-button {
+      width: 200px;
+      height: 60px;
+      font-size: 22px;
+    } 
   }
-
-  .start-button {
-    width: 200px;
-    height: 60px;
-    font-size: 22px;
-  } 
-}
