@@ -1,10 +1,15 @@
 body {
+  height: 100vh;
   font-family: 'Roboto', sans-serif;
-  background-image: url('./img/background.jpg');
   color: white;
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
+  background-image: url('./img/background.jpg');
+}
+
+.invisible {
+  display: none;
 }
 
 .container {
@@ -101,29 +106,56 @@ body {
   line-height: 37px;
   font-family: 'Roboto', sans-serif;
   color: white;
-}
-
-.image {
-    
-}
-
-.image-block {
-    margin-top: 224px;
-    
-}
-
-@media (max-height: 982px){
   cursor: pointer;
   transition: .3s ease;
 }
 
-.start-button:hover {
-  color: #D62B2E;
-  background-color: #fff;
+.image-block {
+  margin-top: 224px; 
 }
 
-.image-block {
-  margin-top: 224px;
+.card__front {
+  background-image: url(img/card.png);
+  width: 218px;
+  height: 341px;
+  background-size: cover;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+
+.card__front:hover {
+  transform: rotate(-3.08deg) translateY(-20px);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.game-field__wrapper {
+  height: 100vh;
+}
+ 
+.game-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-height: 982px){
+  .start-button:hover {
+    color: #D62B2E;
+    background-color: #fff;
+  }
+
+  .image-block {
+    margin-top: 224px;
+  } 
 }
 
 @media (max-height: 982px) {
