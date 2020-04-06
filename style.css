@@ -123,6 +123,7 @@ body {
   margin-bottom: 24px;
   transition: .3s ease-in-out;
   cursor: pointer;
+  border-radius: 6px;
 }
 
 .card__front:hover {
