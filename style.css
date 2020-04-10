@@ -101,16 +101,69 @@ body {
   line-height: 37px;
   font-family: 'Roboto', sans-serif;
   color: white;
-}
-
-.image {
-    
+  cursor: pointer;
+  transition: .3s ease;
 }
 
 .image-block {
     margin-top: 224px;
-    
+}   
+
+.card__front {
+  background-image: url(img/card.png);
+  width: 218px;
+  height: 341px;
+  background-size: cover;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+  border-radius: 6px;
+  backface-visibility: hidden;
 }
+
+.card__front:hover {
+  transform: rotate(-3.08deg) translateY(-20px);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.game-field__wrapper {
+  height: 100vh;
+}
+ 
+.game-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_flipped {
+  transform: rotateY(180deg);
+}
+
+.card__back {
+  background-image: url(img/card_game-over.png);
+  width: 218px;
+  height: 341px;
+  background-size: cover;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+  border-radius: 6px;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  position: absolute;
+}
+
+
 
 @media (max-height: 982px){
   cursor: pointer;
@@ -124,6 +177,35 @@ body {
 
 .image-block {
   margin-top: 224px;
+
+.card_flipped {
+  transform: rotateY(180deg);
+}
+
+.card__back {
+  background-image: url(img/card_game-over.png);
+  width: 218px;
+  height: 341px;
+  background-size: cover;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+  border-radius: 6px;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  position: absolute;
+}
+
+@media (max-height: 982px){
+  .start-button:hover {
+    color: #D62B2E;
+    background-color: #fff;
+  }
+
+  .image-block {
+    margin-top: 224px;
+  } 
 }
 
 @media (max-height: 982px) {
