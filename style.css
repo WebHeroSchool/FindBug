@@ -124,6 +124,7 @@ body {
   transition: .3s ease-in-out;
   cursor: pointer;
   border-radius: 6px;
+  backface-visibility: hidden;
 }
 
 .card__front:hover {
@@ -146,6 +147,25 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.card_flipped {
+  transform: rotateY(180deg);
+}
+
+.card__back {
+  background-image: url(img/card_game-over.png);
+  width: 218px;
+  height: 341px;
+  background-size: cover;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+  border-radius: 6px;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  position: absolute;
 }
 
 @media (max-height: 982px){
