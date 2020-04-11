@@ -1,5 +1,6 @@
 const body = document.body;
 const level = document.querySelectorAll('.menu-item');
+const container = document.querySelector('.container');
 
 const selectLevel = (item) => {
     level.forEach((item) => item.classList.remove("selected"));
@@ -33,8 +34,11 @@ function getNumbersOfCard() {
 }
 
 function clearField() {
-	document.querySelector('.container').classList.add('invisible');
-	document.querySelector('.game-field').classList.add('game-field__wrapper');
+	container.remove();
+	
+    mainContainer.appendChild(baseField);
+	// document.querySelector('.container').classList.add('invisible');
+	// document.querySelector('.game-field').classList.add('game-field__wrapper');
 }
 
 function createCard() {
@@ -47,7 +51,22 @@ function createCard() {
 	document.querySelector('.cards').append(card);
 	card.append(cardBack);
 	card.append(cardFront);
-	card.addEventListener("click", card.classList.add("card_flipped"));
+}
+
+function flipCard() {
+	console.log(this);
+	this.classList.add('card_flipped');
+}
+
+ function finishGame() {
+	
+	const allCards = document.querySelectorAll(".card__wrap");
+	allCards.forEach((item) => item.addEventListener("click", goToStart));
+}
+
+function goToStart() {
+	document.querySelector('.container').classList.remove('invisible'); 
+	document.querySelector('.game-field').classList.add('invisible');
 }
 
 function startGame() {
@@ -56,37 +75,17 @@ function startGame() {
 	const numberOfCards = getNumbersOfCard();
 	for (var i = 1; i <= numberOfCards; i++) {
 		createCard();
-	}
+    }
+	//const cards = document.querySelectorAll('.card__wrap');
+	[...document.querySelectorAll('.card__wrap')].forEach(
+		(item) => {
+					
+			item.addEventListener("click", flipCard);
+		}
+	);
+
+	finishGame();
 }
-
-
-var elements = document.querySelectorAll(".card__wrap");
-for (var i = 0; i < elements.length; i++) {
-  elements[i].onclick = function(){
-  	console.log(elements[i]);
-    elements[i].classList.add("card_flipped");
-  };
-}
-
-
-// const cards = document.querySelectorAll('.card__wrap');
-// 	cards.forEach(
-// 		(item) => {
-// 			// console.log(item);
-// 		  	item.addEventListener("click", item.classList.add("card_flipped"));
-// 		  	// onclick() => {item.classList.add("card_flipped")};
-// 		}
-// 	)
-
-// function game() {
-	
-// 	// [...document.querySelectorAll('.card__wrap')].forEach(
-// 	// 	(item) => {
-// 	// 		// console.log(item);
-// 	// 	  	item.addEventListener("click", item.classList.add("card_flipped"));
-// 	// 	  	// onclick() => {item.classList.add("card_flipped")};
-// 	// 	}
-// 	// )
-// }
 
 startButton.addEventListener("click", startGame);
+

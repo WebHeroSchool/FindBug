@@ -1,10 +1,15 @@
 body {
+  height: 100vh;
   font-family: 'Roboto', sans-serif;
-  background-image: url('./img/background.jpg');
   color: white;
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
+  background-image: url('./img/background.jpg');
+}
+
+.invisible {
+  display: none!important;
 }
 
 .container {
@@ -106,8 +111,13 @@ body {
 }
 
 .image-block {
-    margin-top: 224px;
-}   
+  margin-top: 224px; 
+}
+
+.card__wrap {
+  transform-style: preserve-3d;
+  transition: transform .5s;
+}
 
 .card__front {
   background-image: url(img/card.png);
@@ -143,40 +153,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-.card_flipped {
-  transform: rotateY(180deg);
-}
-
-.card__back {
-  background-image: url(img/card_game-over.png);
-  width: 218px;
-  height: 341px;
-  background-size: cover;
-  margin-right: 24px;
-  margin-bottom: 24px;
-  transition: .3s ease-in-out;
-  cursor: pointer;
-  border-radius: 6px;
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
-  position: absolute;
-}
-
-
-
-@media (max-height: 982px){
-  cursor: pointer;
-  transition: .3s ease;
-}
-
-.start-button:hover {
-  color: #D62B2E;
-  background-color: #fff;
-}
-
-.image-block {
-  margin-top: 224px;
 
 .card_flipped {
   transform: rotateY(180deg);
@@ -277,6 +253,44 @@ body {
 
   .image-block {
     width: 300px;
+  }
+
+  .start-button {
+    width: 200px;
+    height: 60px;
+    font-size: 22px;
+    margin: 0 auto;
+  }
+}
+
+  @media (max-width: 575px) {
+    body {
+      background-size: auto;
+    }
+
+    .header {
+      width: 100vw;
+    }
+
+    .header-main {
+      font-size: 26px;
+      line-height: 30px;
+    }
+
+    .image-block {
+      display: none;
+    }
+    .menu-item {
+      margin: 0 auto;
+    }
+
+    .start-button {
+      width: 200px;
+      height: 60px;
+      font-size: 22px;
+    } 
+  }
+  width: 300px;
   }
 
   .start-button {
