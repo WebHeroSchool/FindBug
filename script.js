@@ -34,11 +34,10 @@ function getNumbersOfCard() {
 }
 
 function clearField() {
-	container.remove();
-	
-    mainContainer.appendChild(baseField);
-	// document.querySelector('.container').classList.add('invisible');
-	// document.querySelector('.game-field').classList.add('game-field__wrapper');
+	// container.remove();
+	// mainContainer.appendChild(baseField);
+	document.querySelector('.container').classList.add('invisible');
+	document.querySelector('.game-field').classList.add('game-field__wrapper');
 }
 
 function createCard() {
@@ -58,16 +57,16 @@ function flipCard() {
 	this.classList.add('card_flipped');
 }
 
- function finishGame() {
+//  function finishGame() {
 	
-	const allCards = document.querySelectorAll(".card__wrap");
-	allCards.forEach((item) => item.addEventListener("click", goToStart));
-}
+// 	const allCards = document.querySelectorAll(".card__wrap");
+// 	allCards.forEach((item) => item.addEventListener("click", goToStart));
+// }
 
-function goToStart() {
-	document.querySelector('.container').classList.remove('invisible'); 
-	document.querySelector('.game-field').classList.add('invisible');
-}
+// function goToStart() {
+// 	document.querySelector('.container').classList.remove('invisible'); 
+// 	document.querySelector('.game-field').classList.add('invisible');
+// }
 
 function startGame() {
 	getLevel();
@@ -82,9 +81,9 @@ function startGame() {
 					
 			item.addEventListener("click", flipCard);
 		}
-	);
+	)
 
-	finishGame();
+	//finishGame();
 }
 
 
