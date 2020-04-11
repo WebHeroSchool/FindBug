@@ -87,5 +87,30 @@ function startGame() {
 	finishGame();
 }
 
+<<<<<<< HEAD
+=======
+
+// const cards = document.querySelectorAll('.card__wrap');
+// 	cards.forEach(
+// 		(item) => {
+// 			// console.log(item);
+// 		  	item.addEventListener("click", item.classList.add("card_flipped"));
+// 		  	// onclick() => {item.classList.add("card_flipped")};
+// 		}
+// 	)
+
+// function game() {
+	
+// 	// [...document.querySelectorAll('.card__wrap')].forEach(
+// 	// 	(item) => {
+// 	// 		// console.log(item);
+// 	// 	  	item.addEventListener("click", item.classList.add("card_flipped"));
+// 	// 	  	// onclick() => {item.classList.add("card_flipped")};
+// 	// 	}
+// 	// )
+// }
+
+
+>>>>>>> 2dcb5ef6b011674fc60f21231eb207a56c4f8f7e
 startButton.addEventListener("click", startGame);
 
