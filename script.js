@@ -87,5 +87,5 @@ function startGame() {
 	finishGame();
 }
 
-startButton.addEventListener("click", startGame);
 
+startButton.addEventListener("click", startGame);

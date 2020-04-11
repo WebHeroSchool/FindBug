@@ -160,6 +160,16 @@ body {
 
 .card__back {
   background-image: url(img/card_game-over.png);
+  margin-top: 224px; 
+}
+
+.card__wrap {
+  transform-style: preserve-3d;
+  transition: transform .5s;
+}
+
+.card__front {
+  background-image: url(img/card.png);
   width: 218px;
   height: 341px;
   background-size: cover;
@@ -253,44 +263,6 @@ body {
 
   .image-block {
     width: 300px;
-  }
-
-  .start-button {
-    width: 200px;
-    height: 60px;
-    font-size: 22px;
-    margin: 0 auto;
-  }
-}
-
-  @media (max-width: 575px) {
-    body {
-      background-size: auto;
-    }
-
-    .header {
-      width: 100vw;
-    }
-
-    .header-main {
-      font-size: 26px;
-      line-height: 30px;
-    }
-
-    .image-block {
-      display: none;
-    }
-    .menu-item {
-      margin: 0 auto;
-    }
-
-    .start-button {
-      width: 200px;
-      height: 60px;
-      font-size: 22px;
-    } 
-  }
-  width: 300px;
   }
 
   .start-button {
