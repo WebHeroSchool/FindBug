@@ -1,11 +1,11 @@
 const body = document.body;
 const level = document.querySelectorAll('.menu-item');
 //const container = document.querySelector('.container');
-const mainScreen = document.querySelector('.container');
-const gameFieldWrapper = document.createElement('div');
-const gameField = document.createElement('div');
-gameFieldWrapper.classList.add('game-field');
-gameField.classList.add('cards');
+// const mainScreen = document.querySelector('.container');
+// const gameFieldWrapper = document.createElement('div');
+// const gameField = document.createElement('div');
+// gameFieldWrapper.classList.add('game-field');
+// gameField.classList.add('cards');
 //const gameField = document.querySelector('.game-field');
 
 
@@ -41,11 +41,11 @@ function getNumbersOfCard() {
 }
 
 function clearField() {	
-	mainScreen.remove();
-	body.append(gameFieldWrapper);
-	gameFieldWrapper.append(gameField);
-	//document.querySelector('.container').classList.add('invisible');
-	//document.querySelector('.game-field').classList.add('game-field__wrapper');
+	// mainScreen.remove();
+	// body.append(gameFieldWrapper);
+	// gameFieldWrapper.append(gameField);
+	document.querySelector('.container').classList.add('invisible');
+	document.querySelector('.game-field').classList.add('game-field__wrapper');
 }
 
 function createCard() {
@@ -55,8 +55,8 @@ function createCard() {
 	const cardBack = document.createElement('div');
 	cardFront.classList.add('card__front');
 	cardBack.classList.add('card__back');
-	gameField.append(card);
-	//document.querySelector('.cards').append(card);
+	// gameField.append(card);
+	document.querySelector('.cards').append(card);
 	card.append(cardBack);
 	card.append(cardFront);
 	console.log(card);
@@ -80,33 +80,37 @@ function getRandomCard() {
 
 function flipCard() {
 	this.classList.add("card_flipped");
+
 	const cards = document.querySelectorAll('.card__wrap');
-	cards.forEach(item =>
+ 	cards.forEach(item =>
 		item.addEventListener("click", returnBack));
 }
 
+
+
 function returnBack() {
-	const card = document.querySelectorAll('card__wrap');
+	const card = document.querySelectorAll('.card__wrap');
 	document.querySelector('.container').classList.remove('invisible');
 	document.querySelector('.game-field').classList.remove('game-field__wrapper');
 	document.querySelector('.cards').remove(card);
 	
-	location.reload();
+	//location.reload();
 }
 
 
 function startGame() {
 	getLevel();
-	//clearField();
+	clearField();
 	const numberOfCards = getNumbersOfCard();
 	for (var i = 1; i <= numberOfCards; i++) {
 	 	createCard();
 	}
-	clearField();
+	// clearField();
 	getRandomCard();
 	const cards = document.querySelectorAll('.card__wrap');
 	cards.forEach(item =>
 		item.addEventListener("click", flipCard));
+	
 }
 
 function main() {
