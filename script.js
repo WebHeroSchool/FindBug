@@ -1,6 +1,13 @@
 const body = document.body;
 const level = document.querySelectorAll('.menu-item');
-const container = document.querySelector('.container');
+//const container = document.querySelector('.container');
+const mainScreen = document.querySelector('.container');
+const gameFieldWrapper = document.createElement('div');
+const gameField = document.createElement('div');
+gameFieldWrapper.classList.add('game-field');
+gameField.classList.add('cards');
+//const gameField = document.querySelector('.game-field');
+
 
 const selectLevel = (item) => {
     level.forEach((item) => item.classList.remove("selected"));
@@ -33,12 +40,12 @@ function getNumbersOfCard() {
 	return numberOfCards;
 }
 
-function clearField() {
-	container.remove();
-	
-    mainContainer.appendChild(baseField);
-	// document.querySelector('.container').classList.add('invisible');
-	// document.querySelector('.game-field').classList.add('game-field__wrapper');
+function clearField() {	
+	mainScreen.remove();
+	body.append(gameFieldWrapper);
+	gameFieldWrapper.append(gameField);
+	//document.querySelector('.container').classList.add('invisible');
+	//document.querySelector('.game-field').classList.add('game-field__wrapper');
 }
 
 function createCard() {
@@ -48,69 +55,62 @@ function createCard() {
 	const cardBack = document.createElement('div');
 	cardFront.classList.add('card__front');
 	cardBack.classList.add('card__back');
-	document.querySelector('.cards').append(card);
+	gameField.append(card);
+	//document.querySelector('.cards').append(card);
 	card.append(cardBack);
 	card.append(cardFront);
+	console.log(card);
+   
+    return card;
+}
+
+function getRandomCard() {
+	const cards = document.querySelectorAll('.card__wrap');
+	const cardsInTheGame = getNumbersOfCard();
+	console.log(cards);
+	const bugCard = Math.floor(Math.random() * cardsInTheGame);
+	
+	cards.forEach(function(card, i) {
+		if(i === bugCard) {
+			cards[i].firstElementChild.style.backgroundImage =  'url(img/card_bug.png)';
+		}
+	});
+	return bugCard;
 }
 
 function flipCard() {
-	console.log(this);
-	this.classList.add('card_flipped');
+	this.classList.add("card_flipped");
+	const cards = document.querySelectorAll('.card__wrap');
+	cards.forEach(item =>
+		item.addEventListener("click", returnBack));
 }
 
- function finishGame() {
+function returnBack() {
+	const card = document.querySelectorAll('card__wrap');
+	document.querySelector('.container').classList.remove('invisible');
+	document.querySelector('.game-field').classList.remove('game-field__wrapper');
+	document.querySelector('.cards').remove(card);
 	
-	const allCards = document.querySelectorAll(".card__wrap");
-	allCards.forEach((item) => item.addEventListener("click", goToStart));
+	location.reload();
 }
 
-function goToStart() {
-	document.querySelector('.container').classList.remove('invisible'); 
-	document.querySelector('.game-field').classList.add('invisible');
-}
 
 function startGame() {
 	getLevel();
-	clearField();
+	//clearField();
 	const numberOfCards = getNumbersOfCard();
 	for (var i = 1; i <= numberOfCards; i++) {
-		createCard();
-    }
-	//const cards = document.querySelectorAll('.card__wrap');
-	[...document.querySelectorAll('.card__wrap')].forEach(
-		(item) => {
-					
-			item.addEventListener("click", flipCard);
-		}
-	);
-
-	finishGame();
+	 	createCard();
+	}
+	clearField();
+	getRandomCard();
+	const cards = document.querySelectorAll('.card__wrap');
+	cards.forEach(item =>
+		item.addEventListener("click", flipCard));
 }
 
-<<<<<<< HEAD
-=======
+function main() {
+	startButton.addEventListener("click", startGame);
+}
 
-// const cards = document.querySelectorAll('.card__wrap');
-// 	cards.forEach(
-// 		(item) => {
-// 			// console.log(item);
-// 		  	item.addEventListener("click", item.classList.add("card_flipped"));
-// 		  	// onclick() => {item.classList.add("card_flipped")};
-// 		}
-// 	)
-
-// function game() {
-	
-// 	// [...document.querySelectorAll('.card__wrap')].forEach(
-// 	// 	(item) => {
-// 	// 		// console.log(item);
-// 	// 	  	item.addEventListener("click", item.classList.add("card_flipped"));
-// 	// 	  	// onclick() => {item.classList.add("card_flipped")};
-// 	// 	}
-// 	// )
-// }
-
-
->>>>>>> 2dcb5ef6b011674fc60f21231eb207a56c4f8f7e
-startButton.addEventListener("click", startGame);
-
+main();
