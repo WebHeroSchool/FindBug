@@ -1,5 +1,4 @@
 body {
-  height: 100vh;
   font-family: 'Roboto', sans-serif;
   color: white;
   background-repeat: no-repeat;
@@ -117,8 +116,8 @@ body {
 
 .card__front {
   background-image: url(img/card.png);
-  width: 218px;
-  height: 341px;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   transition: .3s ease-in-out;
   cursor: pointer;
@@ -133,14 +132,10 @@ body {
 
 .cards {
   display: flex;
-  width: 760px;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.game-field__wrapper {
-  height: 100vh;
+  width: 750px;
 }
  
 .game-field {
@@ -155,8 +150,8 @@ body {
 
 .card__back {
   background-image: url(img/card_game-over.png);
-  width: 218px;
-  height: 341px;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   transition: .3s ease-in-out;
   cursor: pointer;
@@ -173,6 +168,7 @@ body {
   transform-style: preserve-3d;
   transition: transform .5s;
   position: relative;
+  margin-bottom: 24px;
 }
 
 @media (max-height: 982px){
@@ -233,12 +229,12 @@ body {
 
 @media (max-width: 768px) {
   .container {
-    padding: 20px 0px 0px 20px;
+    padding: 10px;
   }
 
   .header-main {
     font-size: 30px;
-    margin-bottom: 0;
+    margin-bottom: 40px;
   }
 
   .header-secondary {
@@ -263,6 +259,16 @@ body {
     font-size: 22px;
     margin: 0 auto;
   }
+
+  .card__wrap {
+    width: 160px;
+    height: 250px;
+    background-size: contain;
+  }
+
+  .cards {
+    width: 639px;
+  }
 }
 
 @media (max-width: 575px) {
@@ -277,12 +283,13 @@ body {
   .header-main {
     font-size: 26px;
     line-height: 30px;
+    text-align: center;
   }
 
   .image-block {
     display: none;
   }
-  
+
   .menu-item {
     margin: 0 auto;
   }
@@ -292,4 +299,30 @@ body {
     height: 60px;
     font-size: 22px;
   } 
+
+  .header-secondary {
+    text-align: center;
+  }
+
+  .container {
+    padding: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .card__wrap {
+    width: 130px;
+    height: 200px;
+    background-size: contain;
+  }
+}
+
+@media (max-width: 406px) {
+  .cards {
+    width: 350px;
+  }
+  .card__wrap {
+    width: 96px;
+    height: 152px;
+  }
 }
