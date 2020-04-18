@@ -1,4 +1,3 @@
-const body = document.body;
 const level = document.querySelectorAll('.menu-item');
 
 const selectLevel = (item) => {
@@ -47,7 +46,6 @@ function createCard() {
 	document.querySelector('.cards').append(card);
 	card.append(cardBack);
 	card.append(cardFront);
-	console.log(card);
    
     return card;
 }
@@ -55,7 +53,6 @@ function createCard() {
 function getRandomCard() {
 	const cards = document.querySelectorAll('.card__wrap');
 	const cardsInTheGame = getNumbersOfCard();
-	console.log(cards);
 	const bugCard = Math.floor(Math.random() * cardsInTheGame);
 	
 	cards.forEach(function(card, i) {
